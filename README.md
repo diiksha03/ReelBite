@@ -1,29 +1,41 @@
-# 🎬 ReelBite – Shoppable Food Media Platform
+# ReelBite – Shoppable Food Media Platform
 
-An innovative video-commerce food delivery application that transforms how users discover, cook, and order food through a dynamic short-video feed.
+A full-stack food delivery app with a short-video feed. Instead of scrolling through a plain menu, users watch quick food reels and can either order the finished dish directly or add the raw ingredients to their cart if they'd rather cook it themselves.
 
----
+## Features
 
-## 🚀 Key Features
+- Short-video feed for discovering dishes (Instagram-reels style)
+- Order the prepared dish directly from a video
+- Add the raw ingredients as a bundle to the cart instead
+- Full-stack setup with a React frontend and a Node/Express backend
 
-* **Short-Video Food Feed:** Scroll through engaging, Instagram-style food reels to discover new dishes.
-* **Instant Ordering:** Crave what you see? Order the prepared dish directly from the video screen.
-* **Raw Ingredients Bundle:** Want to cook it yourself? Smartly add the entire raw ingredients kit/bundle to your cart with one click.
-* **Seamless Full-Stack Architecture:** Powerhouse backend connected with a highly interactive, responsive frontend.
+## Tech Stack
 
----
+**Frontend:** React.js, Vite, Tailwind CSS
+**Backend:** Node.js, Express.js
+**Database:** MongoDB (Mongoose)
 
-## 🛠️ Tech Stack
+## Project Structure
 
-* **Frontend:** React.js, Vite, Tailwind CSS
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB (Mongoose)
+    ReelBite/
+    ├── backend/     # Express server, Mongoose schemas, API routes
+    └── frontend/    # React UI, video player, cart logic
 
----
+## Getting Started
 
-## 📂 Project Structure
+```bash
+git clone https://github.com/diiksha03/ReelBite.git
 
-```text
-canteen/
-├── backend/     # Node.js & Express server, Database schemas, API routes
-└── frontend/    # React.js UI, Video-player components, Smart Cart
+cd backend
+npm install
+npm run dev
+
+cd frontend
+npm install
+npm run dev
+```
+
+## Author
+
+**Diksha Tiwari**
+[LinkedIn](https://linkedin.com/in/dikshatiwari03) · [GitHub](https://github.com/diiksha03)

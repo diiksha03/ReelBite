@@ -3,7 +3,6 @@ const foodPartnerModel = require("../models/foodpartner.model");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// 1. User Registration Logic
 async function registerUser(req, res) {
     try {
         const { fullName, email, password } = req.body;
@@ -34,7 +33,6 @@ async function registerUser(req, res) {
     }
 }
 
-// 2. User Login Logic
 async function loginUser(req, res) {
     try {
         const { email, password } = req.body;
@@ -62,13 +60,11 @@ async function loginUser(req, res) {
     }
 }
 
-// 3. User Logout Logic
 function logoutUser(req, res) {
     res.clearCookie("token");
     res.status(200).json({ message: "User logged out successfully" });
 }
 
-// 4. Food Partner Registration Logic
 async function registerFoodPartner(req, res) {
     try {
         const { name, email, password, phone, address, contactName } = req.body;
@@ -105,7 +101,6 @@ async function registerFoodPartner(req, res) {
     }
 }
 
-// 5. Food Partner Login Logic
 async function loginFoodPartner(req, res) {
     try {
         const { email, password } = req.body;
@@ -133,7 +128,6 @@ async function loginFoodPartner(req, res) {
     }
 }
 
-// 6. Food Partner Logout Logic
 function logoutFoodPartner(req, res) {
     res.clearCookie("token");
     res.status(200).json({ message: "Food partner logged out successfully" });

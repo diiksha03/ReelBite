@@ -52,7 +52,6 @@ const ReelFeed = ({ items = [], onLike, onSave, emptyMessage = 'No videos yet.' 
               return `http://localhost:3000/${cleanUrl}`;
           };
 
-          // Direct dynamic pointer variables reading straight from Saved page array state
           const activeLike = !!item.isLikedByMe;
           const activeSave = !!item.isSavedByMe;
 
@@ -70,11 +69,10 @@ const ReelFeed = ({ items = [], onLike, onSave, emptyMessage = 'No videos yet.' 
               />
 
               <div className="reel-overlay">
-                
-                {/* RIGHT FLOATING ACTION BUTTONS */}
+
+                {/* like, save, comment buttons */}
                 <div style={{ position: 'absolute', right: '15px', bottom: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', zIndex: 12 }}>
-                  
-                  {/* Like Button */}
+
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#fff', cursor: 'pointer' }}>
                     <button
                       onClick={onLike ? (e) => { e.stopPropagation(); onLike(item); } : undefined}
@@ -92,7 +90,6 @@ const ReelFeed = ({ items = [], onLike, onSave, emptyMessage = 'No videos yet.' 
                     </span>
                   </div>
 
-                  {/* Bookmark Button */}
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#fff', cursor: 'pointer' }}>
                     <button
                       onClick={onSave ? (e) => { e.stopPropagation(); onSave(item); } : undefined}
@@ -110,7 +107,6 @@ const ReelFeed = ({ items = [], onLike, onSave, emptyMessage = 'No videos yet.' 
                     </span>
                   </div>
 
-                  {/* Comment Button */}
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#fff', cursor: 'pointer' }}>
                     <button style={{ background: 'rgba(0,0,0,0.4)', padding: '10px', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', border: 'none', color: '#fff' }}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" width="22" height="22">
@@ -123,11 +119,10 @@ const ReelFeed = ({ items = [], onLike, onSave, emptyMessage = 'No videos yet.' 
                   </div>
                 </div>
 
-                {/* LEFT BOTTOM TEXT LAYOUT */}
                 <div style={{ position: 'absolute', bottom: '100px', left: '15px', color: '#fff', zIndex: 10, pointerEvents: 'none', paddingRight: '80px' }}>
                   <h2 style={{ fontSize: '18px', fontWeight: '600', margin: '0 0 6px 0', textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                    {item.name || "Spicy Tuna Roll"} 
-                  </h2> 
+                    {item.name || "Untitled dish"}
+                  </h2>
                   <p style={{ fontSize: '13px', margin: '0', opacity: 0.9, textShadow: '1px 1px 3px rgba(0,0,0,0.8)', lineHeight: '1.4' }}>
                     {item.description}
                   </p>

@@ -5,7 +5,7 @@ const saveModel = require("../models/save.model.js");
 const { v4: uuid } = require("uuid");
 const path = require("path");
 
-// 1. Create Food Item
+
 async function createFood(req, res) {
     try {
         const fileExtension = path.extname(req.file.originalname) || '.mp4'; 
@@ -32,14 +32,13 @@ async function createFood(req, res) {
     }
 }
 
-// 2. Get All Food Items
 async function getFoodItems(req, res) {
     try {
         const foodItems = await foodModel.find({});
         const user = req.user; 
 
         const processedFoods = await Promise.all(foodItems.map(async (food) => {
-            // MongoDB collections se live counts nikaalein taaki mismatch ka chance hi na rahe
+            
             const totalLikes = await likeModel.countDocuments({ food: food._id });
             const totalSaves = await saveModel.countDocuments({ food: food._id });
 
@@ -72,7 +71,6 @@ async function getFoodItems(req, res) {
     }
 }
 
-// 3. Like/Unlike Food 
 async function likeFood(req, res) {
     try {
         const { foodId } = req.body;
@@ -112,7 +110,6 @@ async function likeFood(req, res) {
     }
 }
 
-// 4. Save/Unsave Food 
 async function saveFood(req, res) {
     try {
         const { foodId } = req.body;
